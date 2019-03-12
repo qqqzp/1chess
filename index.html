@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <style>
+        #board {
+            position: absolute;
+            z-index: 1;
+        }
+        #chess {
+            position: absolute;
+            z-index: 2;
+        }
+        #menu {
+            position: relative;
+            left:0px;
+            top:450px;
+            z-index: 3;
+        }
+    </style>
+
+<title>1</title>
+    <script src="scripts/1.js"></script>
+
+</head>
+<body>
+
+<h1>1</h1>
+<p id="demo">auto chess</p>
+<div id="main">
+    <canvas id="board" width="500" height="500"></canvas>
+    <canvas id="chess" width="500" height="500"></canvas>
+</div>
+<div id = "menu">
+    <select id="champli" title=champli></select>
+    <button onclick="addChampion()">添加棋子</button>
+    <button onclick="addRandomChampion()">添加随机棋子</button>
+    <button onclick="clearBoard()">清空棋盘</button>
+</div>
+
+</body>
+</html>
