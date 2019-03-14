@@ -116,25 +116,31 @@ function drawChess() {
 
     for(let chess of chessList) {
         // let chess = chessList[1];
-        if(chess.image.complete) {
-            ctx1.drawImage(chess.image, chess.x, chess.y, layout.cell, layout.cell);
+        if(chess.image.complete) { //已经加载过
             if(chess.isSelected) {
-                ctx1.shadowOffsetX = 5;
-                ctx1.shadowOffsetY = 3;
-                ctx1.shadowBlur = 4;
-                ctx1.shadowColor = "black";
-            }
-            console.log(chess.name)
-        } else {
-            chess.image.onload =  function ()  {
+                // ctx1.shadowOffsetX = 5;
+                // ctx1.shadowOffsetY = 3;
+                // ctx1.shadowBlur = 4;
+                // ctx1.shadowColor = "red";
+                ctx1.fillStyle = "red";
+                ctx1.fill();
+                ctx1.beginPath();
+                ctx1.rect(chess.x, chess.y, layout.cell, layout.cell);
+                ctx1.closePath();
                 ctx1.drawImage(chess.image, chess.x, chess.y, layout.cell, layout.cell);
+                // ctx1.save();
+            }
+            else ctx1.drawImage(chess.image, chess.x, chess.y, layout.cell, layout.cell);
+        } else {
+            chess.image.onload =  function ()  {  //首次加载完成
                 if(chess.isSelected) {
                     ctx1.shadowOffsetX = 5;
                     ctx1.shadowOffsetY = 3;
                     ctx1.shadowBlur = 4;
                     ctx1.shadowColor = "black";
+                    ctx1.drawImage(chess.image, chess.x, chess.y, layout.cell, layout.cell);
                 }
-                console.log(chess.name)
+                else ctx1.drawImage(chess.image, chess.x, chess.y, layout.cell, layout.cell);
             }
         }
     }
@@ -162,14 +168,14 @@ function chessClick(e) {
         distanceY = clickY - chess.y;
         // 判断这个点是否在棋子上
         if (distanceX <= layout.cell && distanceY <= layout.cell) {
-            // alert("!")
+
             // // 清除之前选择的棋子
-            // if (previousSelected != null) previousSelected.isSelected = false;
-            // previousSelected = chess;
+            if (previousSelected != null) previousSelected.isSelected = false;
+            previousSelected = chess;
             // //选择新棋子
-            chess.isSelected = true;
+            previousSelected.isSelected = true;
             // //更新显示
-            // drawBoard();
+            alert(previousSelected.name)
             drawChess();
 
             //停止搜索
@@ -194,7 +200,7 @@ window.onload = function () {
     // addChess(ctx,'Slardar');
     let ax,ay,x,y;
 
-    canvas.onmousedown = chessClick;
+    canvas1.onmousedown = chessClick;
 
 }
 
