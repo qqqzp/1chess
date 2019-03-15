@@ -114,7 +114,7 @@ function Chess(name,src,x,y) {
 function drawChess() {
     ctx1.clearRect(0, 0, canvas.width, canvas.height);
 
-    for(let chess of chessList) {
+    for(chess of chessList) {
         // let chess = chessList[1];
         let img = new Image();
         img.src = chess.src;
@@ -128,19 +128,20 @@ function drawChess() {
                 ctx1.fill();
                 ctx1.stroke();
             }
-        } else {
-            img.onload =  function ()  {  //首次加载完成
-                ctx1.drawImage(img, chess.x, chess.y, layout.cell, layout.cell);
-                console.log(chess.name+"first time")
-                if(chess.isSelected) {
-                    ctx1.beginPath();
-                    ctx1.arc(chess.x, chess.y, 25, 0, Math.PI*2);
-                    ctx1.strokeStyle = "black";
-                    ctx1.fill();
-                    ctx1.stroke();
-                }
-            }
         }
+        // else {
+        //     img.onload =  function ()  {  //首次加载完成
+        //         ctx1.drawImage(img, chess.x, chess.y, layout.cell, layout.cell);
+        //         console.log(chess.name+"first time")
+        //         if(chess.isSelected) {
+        //             ctx1.beginPath();
+        //             ctx1.arc(chess.x, chess.y, 25, 0, Math.PI*2);
+        //             ctx1.strokeStyle = "black";
+        //             ctx1.fill();
+        //             ctx1.stroke();
+        //         }
+        //     }
+        // }
 
     }
 }
@@ -161,9 +162,9 @@ function chessClick(e) {
     let clickY = e.pageY - canvas.offsetTop;
     console.log(clickX,clickY);
     // 查找被单击的棋子
-    for(let chess of chessList) {
+    for(chess of chessList) {
         distanceX = clickX - chess.x;
-        distanceY = Math.abs(clickY - chess.y);
+        distanceY = chess.y + layout.cell - clickY  ; //debug
         // 判断这个点是否在棋子上
         if (distanceX <= layout.cell && distanceY <= layout.cell) {
             console.log(distanceX,distanceY);
@@ -172,13 +173,40 @@ function chessClick(e) {
             previousSelected = chess;
             // //选择新棋子
             console.log(chess.name+" is selected")
-            chess.isSelected = true;
+            previousSelected.isSelected = true;
+
+            isDragging = true;
             // //更新显示
             // alert(previousSelected.name)
             drawChess();
 
             //停止搜索
             return;
+        }
+    }
+}
+
+function stopDragging() {
+    isDragging = false;
+    drawChess();
+}
+
+function dragChess(e) {
+    // alert("?")
+    // 判断圆圈是否开始拖拽
+    if (isDragging === true) {
+        // 判断拖拽对象是否存在
+        if (previousSelected != null) {
+            // 取得鼠标位置
+            var x = e.pageX - canvas.offsetLeft;
+            var y = e.pageY - canvas.offsetTop;
+
+            // 将圆圈移动到鼠标位置
+            previousSelected.x = x;
+            previousSelected.y = y;
+
+            // 更新画布
+            drawChess();
         }
     }
 }
@@ -194,18 +222,36 @@ window.onload = function () {
     // canvas.onmousedown = canvasClick;
     drawBoard();
     // addChess(ctx,null);
+    preLoad();
     addChess("Abaddon",);//测试用
     addChess('Light Keeper');
     // addChess(ctx,'Slardar');
     let ax,ay,x,y;
-
+    isDragging = false;
     canvas1.onmousedown = chessClick;
+    canvas1.onmouseup = stopDragging;
+    canvas1.onmouseout = stopDragging;
+    canvas1.onmousemove = dragChess;
 
 }
 
+
+function preLoad(callback) {
+    for(name of names) {
+        let img = new Image();
+        img.src = "champions/"+name+".png";
+        img.onload = function () {
+            if(name.findIndex!==names.length-1) {
+                ctx1.drawImage(img, 350,0, 0, 0);
+            }
+        }
+    }
+
+
+}
 function makeSelectList() {
-    let list =document.getElementById("champli");
-    for(let name of names) {
+    let list = document.getElementById("champli");
+    for(name of names) {
         let champopt = document.createElement("option");
         champopt.value=name;
         champopt.text=name;
