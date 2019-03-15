@@ -101,9 +101,9 @@ function addRandomChampion() {
     // alert(cpn);
     addChess(cpn);
 }
-function Chess(name,image,x,y) {
+function Chess(name,src,x,y) {
     this.name = name;
-    this.image = image;
+    this.src = src;
     this.x = x;
     this.y = y;
     this.isSelected = false;
@@ -116,41 +116,39 @@ function drawChess() {
 
     for(let chess of chessList) {
         // let chess = chessList[1];
-        if(chess.image.complete) { //已经加载过
+        let img = new Image();
+        img.src = chess.src;
+        if(img.complete) { //已经加载过
+            ctx1.drawImage(img, chess.x, chess.y, layout.cell, layout.cell);
+            console.log(chess.name+"iscomp")
             if(chess.isSelected) {
-                // ctx1.shadowOffsetX = 5;
-                // ctx1.shadowOffsetY = 3;
-                // ctx1.shadowBlur = 4;
-                // ctx1.shadowColor = "red";
-                ctx1.fillStyle = "red";
-                ctx1.fill();
                 ctx1.beginPath();
-                ctx1.rect(chess.x, chess.y, layout.cell, layout.cell);
-                ctx1.closePath();
-                ctx1.drawImage(chess.image, chess.x, chess.y, layout.cell, layout.cell);
-                // ctx1.save();
+                ctx1.arc(chess.x, chess.y, 25, 0, Math.PI*2);
+                ctx1.strokeStyle = "black";
+                ctx1.fill();
+                ctx1.stroke();
             }
-            else ctx1.drawImage(chess.image, chess.x, chess.y, layout.cell, layout.cell);
         } else {
-            chess.image.onload =  function ()  {  //首次加载完成
+            img.onload =  function ()  {  //首次加载完成
+                ctx1.drawImage(img, chess.x, chess.y, layout.cell, layout.cell);
+                console.log(chess.name+"first time")
                 if(chess.isSelected) {
-                    ctx1.shadowOffsetX = 5;
-                    ctx1.shadowOffsetY = 3;
-                    ctx1.shadowBlur = 4;
-                    ctx1.shadowColor = "black";
-                    ctx1.drawImage(chess.image, chess.x, chess.y, layout.cell, layout.cell);
+                    ctx1.beginPath();
+                    ctx1.arc(chess.x, chess.y, 25, 0, Math.PI*2);
+                    ctx1.strokeStyle = "black";
+                    ctx1.fill();
+                    ctx1.stroke();
                 }
-                else ctx1.drawImage(chess.image, chess.x, chess.y, layout.cell, layout.cell);
             }
         }
+
     }
 }
 
 var cnt = 0;
 function addChess(chessName) {
-    let img = new Image();
-    img.src = "champions/"+chessName+".png";
-    let chs =  new Chess(chessName,img,cnt % 8 * layout.cell,layout.cell * 7 - Math.floor(cnt / 8 )* layout.cell);
+    let src = "champions/"+chessName+".png";
+    let chs =  new Chess(chessName,src,cnt % 8 * layout.cell,layout.cell * 7 - Math.floor(cnt / 8 )* layout.cell);
     chessList.push(chs);
     cnt++;
     drawChess();
@@ -165,21 +163,22 @@ function chessClick(e) {
     // 查找被单击的棋子
     for(let chess of chessList) {
         distanceX = clickX - chess.x;
-        distanceY = clickY - chess.y;
+        distanceY = Math.abs(clickY - chess.y);
         // 判断这个点是否在棋子上
         if (distanceX <= layout.cell && distanceY <= layout.cell) {
-
+            console.log(distanceX,distanceY);
             // // 清除之前选择的棋子
             if (previousSelected != null) previousSelected.isSelected = false;
             previousSelected = chess;
             // //选择新棋子
-            previousSelected.isSelected = true;
+            console.log(chess.name+" is selected")
+            chess.isSelected = true;
             // //更新显示
-            alert(previousSelected.name)
+            // alert(previousSelected.name)
             drawChess();
 
             //停止搜索
-            break;
+            return;
         }
     }
 }
