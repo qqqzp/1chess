@@ -125,7 +125,7 @@ function drawChess() {
         // let img = new Image();
         // img.src = chess.src;
         // if(images[i].complete) { //已经加载过
-            let i = chessList.indexOf(chess);
+            let i = names.indexOf(chess.name);
             ctx1.drawImage(images[i], chess.x, chess.y, layout.cell, layout.cell);
             console.log(chess.name+"iscomp")
             if(chess.isSelected) {
@@ -199,6 +199,7 @@ function chessClick(e) {
     }
 }
 var previousSelected;
+
 function stopDragging() {
     if(previousSelected != null) {
         let offsetX = previousSelected.x % layout.cell;
@@ -216,12 +217,16 @@ function stopDragging() {
         }
 
         for(let chess in chessList) {
+            console.log(chess.x,chess.y);
             if(chess.x===fixedX&&chess.y===fixedY) {
                 previousSelected.x = previousX;
                 previousSelected.y = previousY;
+                alert("?")
+
             } else {
                 previousSelected.x = fixedX;
                 previousSelected.y = fixedY;
+                drawChess();
             }
         }
     }
