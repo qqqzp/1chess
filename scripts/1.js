@@ -165,7 +165,7 @@ function addChess(chessName) {
 }
 
 
-//check
+
 var previousX,previousY;
 function chessClick(e) {
     // 取得画布上被单击的点
