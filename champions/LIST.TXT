@@ -1,57 +1,59 @@
-       'Alchemist'',
-        'Anti_Mage'',
-        'Axe'',
-        'Bat Rider'',
-        'Beast Master',
-        'Bounty Hunter',
-        'Chaos Knight',
-        'Clockwerk',
-        'Crystal Maiden',
-        'Death Prophet',
-        'Disruptor',
-        'Doom',
-        'Dragon Knight',
-        'Drow Ranger',
-        'Enchantress',
-        'Enigma',
-        'Gyrocopter',
-        'Juggernaut',
-        'Kunkka',
-        'Lich',
-        'Light Keeper',
-        'Lina',
-        'Lone Druid',
-        'Luna',
-        'Lycan',
-        'Medusa',
-        'Mirana',
-        'Morphling',
-        'Natures Prophet',
-        'Necrophos',
-        'Ogre Magi',
-        'Omni Knight',
-        'Pain Queen',
-        'Phantom Assassin',
-        'Puck',
-        'Razor',
-        'Riki',
-        'Sand King',
-        'Shadow Fiend',
-        'Shadow Shaman',
-        'Slardar',
-        'Slark',
-        'Sniper',
-        'Techies',
-        'Templar Assassin',
-        'Terrorblade',
-        'Tide Hunter',
-        'Timbersaw',
-        'Tinker',
-        'Tiny',
-        'Treant Protector',
-        'Troll Warlord',
-        'Tusk',
-        'Venomancer',
-        'Viper',
-        'Wind Ranger',
-        'Witch Doctor',
+
+伐木机.png
+先知.png
+光之守卫.png
+全能骑士.png
+兽王.png
+冥界亚龙.png
+利爪德鲁伊.png
+剑圣.png
+剧毒术士.png
+卓尔游侠.png
+发条技师.png
+变体精灵.png
+圣堂刺客.png
+地精修补匠.png
+地精工程师.png
+小小.png
+巨牙海民.png
+巨魔战将.png
+巫医.png
+巫妖.png
+干扰者.png
+影魔.png
+敌法师.png
+斧王.png
+暗影刺客.png
+暗影萨满.png
+月之女祭司.png
+月之骑士.png
+末日使者.png
+树精卫士.png
+死亡先知.png
+死亡骑士.png
+死灵法师.png
+水晶室女.png
+沙王.png
+海军上将.png
+混沌骑士.png
+潮汐猎人.png
+灵魂守卫.png
+炼金术士.png
+狙击手.png
+狼人.png
+痛苦女王.png
+矮人直升机.png
+秀逗魔导士.png
+精灵龙.png
+蛇发女妖.png
+蝙蝠骑士.png
+谜团.png
+赏金猎人 .png
+闪电幽魂.png
+隐形刺客.png
+风行者.png
+食人魔法师.png
+魅惑魔女.png
+鱼人夜行者.png
+鱼人守卫.png
+龙骑士.png

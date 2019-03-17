@@ -9,155 +9,40 @@
        cursor: pointer;
        border: 1px solid black;
      }
+     a {
+         position: absolute;
+     }
  </style>
- <script>
-    // 这个方法用来储存每个圆圈对象
-    function Circle(x, y, radius, color) {
-      this.x = x;
-      this.y = y;
-      this.radius = radius;
-      this.color = color;
-      this.isSelected = false;
-    }
 
-    // 保存画布上所有的圆圈
-    var circles = [];
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            context.fillStyle = "green";
+            context.fillRect(50, 50, 100, 100);
+            // no argument defaults to image/png; image/jpeg, etc also work on some
+            var i = canvas.toDataURL("image/png");
+            var type = 'png';
+            var _fixType = function(type) {
+                type = type.toLowerCase().replace(/jpg/i, 'jpeg');
+                var r = type.match(/png|jpeg|bmp|gif/)[0];
+                return 'image/' + r;
+            };
 
-    var canvas;
-    var context;
-
-    window.onload = function() {
-      canvas = document.getElementById("canvas");
-      context = canvas.getContext("2d");
-
-      canvas.onmousedown = canvasClick;
-    };
-
-    function addRandomCircle() {
-      // 为圆圈计算一个随机大小和位置
-      var radius = randomFromTo(10, 60);
-      var x = randomFromTo(0, canvas.width);
-      var y = randomFromTo(0, canvas.height);
-
-      // 为圆圈计算一个随机颜色
-      var colors = [    'Clockwerk',
-          'Crystal Maiden',
-          'Death Prophet',
-          'Disruptor',
-          'Doom',
-          'Dragon Knight',
-          'Drow Ranger',
-          'Enchantress',
-          'Enigma',
-          'Gyrocopter',
-          'Juggernaut',
-          'Kunkka'];
-      var color = colors[randomFromTo(0, 8)];
-
-      // 创建一个新圆圈
-      var circle = new Circle(x, y, radius, color);
-
-      // 把它保存在数组中
-      circles.push(circle);
-
-      // 重新绘制画布
-      drawCircles();
-    }
-
-    function clearCanvas() {
-      // 去除所有圆圈
-      circles = [];
-
-      // 重新绘制画布.
-      drawCircles();
-    }
-
-    function drawCircles() {
-      // 清除画布，准备绘制
-      context.clearRect(0, 0, canvas.width, canvas.height);
-
-      // 遍历所有圆圈
-      for(var i=0; i<circles.length; i++) {
-        var circle = circles[i];
-          let img = new Image();
-          img.src = "champions/"+circle.color+".png";
-        // 绘制圆圈
-        // context.globalAlpha = 0.85;
-        // context.beginPath();
-        // context.arc(circle.x, circle.y, circle.radius, 0, Math.PI*2);
-          if(img.complete) {
-              context.drawImage(img,circle.x,circle.y,circle.radius,circle.radius);
-            if (circle.isSelected) {
-                context.beginPath();
-                context.arc(circle.x, circle.y, circle.radius, 0, Math.PI*2);
-                context.strokeStyle = "black";
-                context.fill();
-                context.stroke();
-             }
-          } else {
-              img.onload =  function () {
-                  let img = new Image();
-                  img.src = "champions/"+circle.color+".png";
-                  context.drawImage(img,circle.x,circle.y,circle.radius,circle.radius);
-                  if (circle.isSelected) {
-                      context.beginPath();
-                      context.arc(circle.x, circle.y, circle.radius, 0, Math.PI*2);
-                      context.strokeStyle = "black";
-                      context.fill();
-                      context.stroke();
-                  }
-              }
-          }
-      }
-    }
-
-    var previousSelectedCircle;
-
-    function canvasClick(e) {
-      // 取得画布上被单击的点
-      var clickX = e.pageX - canvas.offsetLeft;
-      var clickY = e.pageY - canvas.offsetTop;
-
-      // 查找被单击的圆圈
-      for(var i=circles.length-1; i>=0; i--) {
-        var circle = circles[i];
-        //使用勾股定理计算这个点与圆心之间的距离
-        var distanceFromCenter = Math.sqrt(Math.pow(circle.x - clickX, 2)
-            + Math.pow(circle.y - clickY, 2))
-        // 判断这个点是否在圆圈中
-        if (distanceFromCenter <= circle.radius) {
-          // 清除之前选择的圆圈
-          if (previousSelectedCircle != null) previousSelectedCircle.isSelected = false;
-          previousSelectedCircle = circle;
-
-          //选择新圆圈
-          circle.isSelected = true;
-
-          //更新显示
-          drawCircles();
-
-          //停止搜索
-          return;
+// 加工image data，替换mime type
+            var imgData = i.replace(_fixType(type), 'image/octet-stream');
+            var d = document.createElement('a');
+            d.herf = imgData;
+            d.text = "??"
+            d.download = ("?");
+            document.body.appendChild(d)
         }
-      }
-    }
+    </script>
 
-    //在某个范围内生成随机数
-    function randomFromTo(from, to) {
-      return Math.floor(Math.random() * (to - from + 1) + from);
-    }
- </script>
 </head>
 
 <body>
-
-  <canvas id="canvas" width="400" height="300">
-  </canvas>
-
-  <div>
-    <button onclick="addRandomCircle()">添加圆圈</button>
-    <button onclick="clearCanvas()">清空画布</button>
-  </div>
+<canvas id=canvas width=200 height=200></canvas>
 
 </body>
 </html>

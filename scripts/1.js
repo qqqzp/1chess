@@ -9,64 +9,8 @@ const style = {
 };
 
 chessList = [];
-const names = ['Abaddon',
-    'Alchemist',
-    'Anti_Mage',
-    'Axe',
-    'Bat Rider',
-    'Beast Master',
-    'Bounty Hunter',
-    'Chaos Knight',
-    'Clockwerk',
-    'Crystal Maiden',
-    'Death Prophet',
-    'Disruptor',
-    'Doom',
-    'Dragon Knight',
-    'Drow Ranger',
-    'Enchantress',
-    'Enigma',
-    'Gyrocopter',
-    'Juggernaut',
-    'Kunkka',
-    'Lich',
-    'Light Keeper',
-    'Lina',
-    'Lone Druid',
-    'Luna',
-    'Lycan',
-    'Medusa',
-    'Mirana',
-    'Morphling',
-    'Natures Prophet',
-    'Necrophos',
-    'Ogre Magi',
-    'Omni Knight',
-    'Pain Queen',
-    'Phantom Assassin',
-    'Puck',
-    'Razor',
-    'Riki',
-    'Sand King',
-    'Shadow Fiend',
-    'Shadow Shaman',
-    'Slardar',
-    'Slark',
-    'Sniper',
-    'Techies',
-    'Templar Assassin',
-    'Terrorblade',
-    'Tide Hunter',
-    'Timbersaw',
-    'Tinker',
-    'Tiny',
-    'Treant Protector',
-    'Troll Warlord',
-    'Tusk',
-    'Venomancer',
-    'Viper',
-    'Wind Ranger',
-    'Witch Doctor',
+const names = [
+    '伐木机','先知','光之守卫','全能骑士','兽王','冥界亚龙','利爪德鲁伊','剑圣','剧毒术士','卓尔游侠','发条技师','变体精灵','圣堂刺客','地精修补匠','地精工程师','小小','巨牙海民','巨魔战将','巫医','巫妖','干扰者','影魔','敌法师','斧王','暗影刺客','暗影萨满','月之女祭司','月之骑士','末日使者','树精卫士','死亡先知','死亡骑士','死灵法师','水晶室女','沙王','海军上将','混沌骑士','潮汐猎人','灵魂守卫','炼金术士','狙击手','狼人','痛苦女王','矮人直升机','秀逗魔导士','精灵龙','蛇发女妖','蝙蝠骑士','谜团','赏金猎人 ','闪电幽魂','隐形刺客','风行者','食人魔法师','魅惑魔女','鱼人夜行者','鱼人守卫','龙骑士'
 ]
 
 function drawBoard() {
@@ -127,7 +71,7 @@ function drawChess() {
         // if(images[i].complete) { //已经加载过
             let i = names.indexOf(chess.name);
             ctx1.drawImage(images[i], chess.x, chess.y, layout.cell, layout.cell);
-            console.log(chess.name+"iscomp")
+            // console.log(chess.name+"iscomp")
             if(chess.isSelected) {
                 ctx1.beginPath();
                 ctx1.moveTo(chess.x,chess.y+layout.cell);
@@ -157,11 +101,14 @@ function drawChess() {
 
 var cnt = 0;
 function addChess(chessName) {
-    let src = "champions/"+chessName+".png";
-    let chs =  new Chess(chessName,src,cnt % 8 * layout.cell,layout.cell * 7 - Math.floor(cnt / 8 )* layout.cell);
-    chessList.push(chs);
-    cnt++;
-    drawChess();
+    if(chessList.length===10) alert("棋子不能超过10个")
+    else {
+        let src = "champions/"+chessName+".png";
+        let chs =  new Chess(chessName,src,cnt % 8 * layout.cell,layout.cell * 7 - Math.floor(cnt / 8 )* layout.cell);
+        chessList.push(chs);
+        cnt++;
+        drawChess();
+    }
 }
 
 
@@ -171,9 +118,10 @@ function chessClick(e) {
     // 取得画布上被单击的点
     let clickX = e.pageX - canvas.offsetLeft;
     let clickY = e.pageY - canvas.offsetTop;
-    console.log(clickX,clickY);
+    // console.log(clickX,clickY);
     // 查找被单击的棋子
     for(chess of chessList) {
+        // console.log(chess.x,chess.y);
         let a = chess.x+layout.cell/2, b = chess.y+layout.cell/2;  //中心点
         let distanceR =  Math.sqrt(Math.pow(clickX - a, 2) + Math.pow(clickY - b, 2));
         // 判断这个点是否在棋子上
@@ -184,10 +132,12 @@ function chessClick(e) {
             if (previousSelected != null) previousSelected.isSelected = false;
             previousSelected = chess;
             // //选择新棋子
-            console.log(chess.name+" is selected")
+            // console.log(chess.name+" is selected")
             previousSelected.isSelected = true;
             previousX = chess.x;
+
             previousY = chess.y;
+            console.log(previousX);
             isDragging = true;
             // //更新显示
             // alert(previousSelected.name)
@@ -216,12 +166,11 @@ function stopDragging() {
             fixedY = previousSelected.y - offsetY + layout.cell;
         }
 
-        for(let chess in chessList) {
+        for(chess of chessList) {
             console.log(chess.x,chess.y);
-            if(chess.x===fixedX&&chess.y===fixedY) {
+            if((chess.x===fixedX) && (chess.y===fixedY)) {
                 previousSelected.x = previousX;
                 previousSelected.y = previousY;
-                alert("?")
 
             } else {
                 previousSelected.x = fixedX;
