@@ -3,66 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6692915d-3559-4ff3-bc36-0fa96fe02a0d" name="默认更改列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Abaddon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Alchemist.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Anti_Mage.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Axe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Bat Rider.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Beast Master.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Bounty Hunter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Chaos Knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Clockwerk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Crystal Maiden.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Death Prophet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Disruptor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Doom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Dragon Knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Drow Ranger.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Enchantress.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Enigma.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Gyrocopter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Juggernaut.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Kunkka.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/champions/LIST.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/champions/LIST.TXT" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Lich.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Light Keeper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Lina.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Lone Druid.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Luna.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Lycan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Medusa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Mirana.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Morphling.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Natures Prophet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Necrophos.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Ogre Magi.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Omni Knight.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Pain Queen.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Phantom Assassin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Puck.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Razor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Riki.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Sand King.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Shadow Fiend.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Shadow Shaman.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Slardar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Slark.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Sniper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Techies.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Templar Assassin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Terrorblade.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Tide Hunter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Timbersaw.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Tinker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Tiny.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Treant Protector.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Troll Warlord.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Tusk.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Venomancer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Viper.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Wind Ranger.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/champions/Witch Doctor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/new 1.html" beforeDir="false" afterPath="$PROJECT_DIR$/new 1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/1.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/1.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -78,15 +20,17 @@
     <session id="-721228934">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="2" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="2" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -106,15 +50,15 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="549" />
-          <entry key="js" value="4871" />
+          <entry key="html" value="711" />
+          <entry key="js" value="6695" />
           <entry key="txt" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="549" />
-          <entry key="JavaScript" value="4871" />
+          <entry key="HTML" value="711" />
+          <entry key="JavaScript" value="6695" />
           <entry key="PLAIN_TEXT" value="20" />
         </counts>
       </usages-collector>
@@ -125,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+            <state relative-caret-position="-911">
+              <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -134,11 +78,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="172" column="47" selection-start-line="172" selection-start-column="47" selection-end-line="172" selection-end-column="47" />
+            <state relative-caret-position="113">
+              <caret line="416" column="44" selection-start-line="416" selection-start-column="44" selection-end-line="416" selection-end-column="44" />
               <folding>
-                <element signature="e#189#870#0" />
-                <element signature="n#!!block;n#drawBoard#0" />
+                <element signature="e#189#582#0" />
+                <element signature="n#!!block;n#check#0;n#!!block;n#drawChess#0" />
               </folding>
             </state>
           </provider>
@@ -155,6 +99,10 @@
       <find>canvas1</find>
       <find>ctx1</find>
       <find>console</find>
+      <find>食人魔</find>
+      <find>树</find>
+      <find>法</find>
+      <find>(elf</find>
     </findStrings>
     <replaceStrings>
       <replace>canvas.getContext(&quot;2d&quot;)</replace>
@@ -174,8 +122,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/new 1.html" />
+        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/scripts/1.js" />
       </list>
     </option>
@@ -187,10 +135,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1100" />
+    <option name="x" value="21" />
+    <option name="y" value="12" />
+    <option name="width" value="1933" />
+    <option name="height" value="1085" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -235,7 +183,10 @@
       <workItem from="1552629527629" duration="11057000" />
       <workItem from="1552655485350" duration="4275000" />
       <workItem from="1552738499559" duration="12706000" />
-      <workItem from="1552814152572" duration="6645000" />
+      <workItem from="1552814152572" duration="6676000" />
+      <workItem from="1552891665537" duration="11510000" />
+      <workItem from="1552912288328" duration="107000" />
+      <workItem from="1552912448171" duration="54000" />
     </task>
     <task id="LOCAL-00001" summary="更新了drawChess方法">
       <created>1552381613720</created>
@@ -255,10 +206,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77089000" />
+    <option name="totallyTimeSpent" value="88791000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1552" height="880" extended-state="0" />
+    <frame x="17" y="10" width="1546" height="868" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25100672" />
@@ -278,7 +229,7 @@
       <window_info anchor="bottom" id="调试" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.2497979" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,9 +270,7 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/images/champions/Abaddon.jpg" />
-    <entry file="file://$PROJECT_DIR$/champions/Axe.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/champions/Axe.png" />
     <entry file="file://$PROJECT_DIR$/new 1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -338,18 +287,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        <state relative-caret-position="-911">
+          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/1.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="172" column="47" selection-start-line="172" selection-start-column="47" selection-end-line="172" selection-end-column="47" />
+        <state relative-caret-position="113">
+          <caret line="416" column="44" selection-start-line="416" selection-start-column="44" selection-end-line="416" selection-end-column="44" />
           <folding>
-            <element signature="e#189#870#0" />
-            <element signature="n#!!block;n#drawBoard#0" />
+            <element signature="e#189#582#0" />
+            <element signature="n#!!block;n#check#0;n#!!block;n#drawChess#0" />
           </folding>
         </state>
       </provider>

@@ -17,6 +17,18 @@
             top:450px;
             z-index: 3;
         }
+        #info {
+            position: absolute;
+            left:450px;
+            top:100px;
+            z-index: 3;
+        }
+        #details {
+            position: absolute;
+            left:600px;
+            top:100px;
+            z-index: 3;
+        }
 
     </style>
 
@@ -27,16 +39,68 @@
 
 <h1>1</h1>
 <p id="demo">auto chess</p>
-<div class="preLoad">
+
 <div id="main">
-    <canvas id="board" width="500" height="500"></canvas>
-    <canvas id="chess" width="500" height="500"></canvas>
+    <canvas id="board" width="400" height="400"></canvas>
+    <canvas id="chess" width="400" height="400"></canvas>
 </div>
 <div id = "menu">
     <select id="champli" title=champli></select>
     <button onclick="addChampion()">添加棋子</button>
     <button onclick="addRandomChampion()">添加随机棋子</button>
     <button onclick="clearBoard()">清空棋盘</button>
+</div>
+<div>
+    <p id = "info"> </p>
+    <p id = "details">
+        战士：3/6/9 所有友方战士护甲+7/+8/+9<br>
+
+
+        兽人：2/4 所有友方兽人最大生命值+250/+350<br>
+
+
+        地精：3/6/9：随机友军/所有友方地精+15护甲，生命回复+10<br>
+
+
+        亡灵：2/4 使所有敌军的护甲-5/-7<br>
+
+
+        工匠：2/4：所有友方工匠生命回复+15/+25<br>
+
+
+        巨魔：2/4: 所有友方巨魔/友军攻击速度+35/30<br>
+
+
+        术士：3/6：所有友军攻击20%/30%吸血<br>
+
+
+        猎人：3/6 所有友方猎人的攻击力+30%/+30%<br>
+
+
+        野兽：2/4/6 所有友军攻击力+10%/+15%/+20%<br>
+
+
+        人类：2/4/6 有20%/25%/30%概率使敌人沉默4秒<br>
+
+
+        精灵：3/6 所有友方精灵+25%/+25%几率闪避敌人攻击<br>
+
+
+        刺客：3/6 所有友方刺客攻击时有10%/20%几率造成3.5/4.5倍伤害<br>
+
+
+        骑士：2/4/6 所有友方骑士有+30%/+30%/+30%的时间被减伤护盾庇护<br>
+
+
+        法师：3/6 降低敌方魔抗40/40<br>
+
+
+        娜迦：2/4 所有友军的魔法抗性+20/+40<br>
+
+
+        元素：2/4所有友方元素/友军被近战攻击时有30%概率使攻击者石化4秒<br>
+
+    </p>
 </div>
 
 </body>

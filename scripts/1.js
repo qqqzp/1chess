@@ -61,9 +61,310 @@ function Chess(name,src,x,y) {
 }
 
 
+
 function drawChess() {
     ctx1.clearRect(0, 0, canvas.width, canvas.height);
+    var recorder = {
+        human:0,
+        elf:0,
+        orge:0,
+        satyr:0,
+        dwart:0,
+        beast:0,
+        goblin:0,
+        demon:0,
+        elemental:0,
+        naga:0,
+        orc:0,
+        troll:0,
+        ghost:0,
+        dragon:0,
+        warrior:0,
+        assassin:0,
+        mage:0,
+        hunter:0,
+        warlock:0,
+        knight:0,
+        craftsman:0,
+        druid:0,
+        demonHunter:0,
+        shaman:0
+    };
+    function check(name) {
+        switch (name) {
+            case'伐木机':
+                recorder.goblin++;
+                recorder.craftsman++;
+                break;
+            case'先知':
+                recorder.elf++;
+                recorder.druid++;
+                break;
+            case'光之守卫':
+                recorder.human++;
+                recorder.mage++;
+                break;
+            case'全能骑士':
+                recorder.human++;
+                recorder.knight++;
+                break;
+            case'兽王':
+                recorder.beast++;
+                recorder.hunter++
+                break;
+            case'冥界亚龙':
+                recorder.dragon++;
+                recorder.assassin++;
+                break;
+            case'利爪德鲁伊':
+                recorder.beast++;
+                recorder.druid++;
+                break;
+            case'剑圣':
+                recorder.orc++;
+                recorder.warrior++;
+                break;
+            case'剧毒术士':
+                recorder.beast++;
+                recorder.warlock++;
+                break;
+            case'卓尔游侠':
+                recorder.ghost++
+                recorder.hunter++;
+                break;
+            case'发条技师':
+                recorder.goblin++
+                recorder.craftsman++
+                break;
+            case'变体精灵':
+                recorder.elemental++
+                recorder.assassin++
+                break;
+            case'圣堂刺客':
+                recorder.elf++
+                recorder.assassin++
+                break;
+            case'地精修补匠':
+                recorder.goblin++
+                recorder.craftsman++
+                break;
+            case'地精工程师':
+                recorder.goblin++
+                recorder.craftsman++
+                break;
+            case'小小':
+                recorder.elemental++
+                recorder.warrior++
+                break;
+            case'巨牙海民':
+                recorder.beast++
+                recorder.warrior++
+                break;
+            case'巨魔战将':
+                recorder.troll++
+                recorder.warrior++
+                break;
+            case'巫医':
+                recorder.troll++
+                recorder.shaman++;
+                break;
+            case'巫妖':
+                recorder.ghost++
+                recorder.mage++
+                break;
+            case'干扰者':
+                recorder.orc++
+                recorder.shaman++
+                break;
+            case'影魔':
+                recorder.demon++
+                recorder.warlock++;
+                break;
+            case'敌法师':
+                recorder.elf++;
+                recorder.demonHunter++;
+                break;
+            case'斧王':
+                recorder.orc++
+                recorder.warrior++
+                break;
+            case'暗影刺客':
+                recorder.elf++
+                recorder.assassin++
+                break;
+            case'暗影萨满':
+                recorder.troll++
+                recorder.shaman++
+                break;
+            case'月之女祭司':
+                recorder.elf++
+                recorder.hunter++
+                break;
+            case'月之骑士':
+                recorder.elf++
+                recorder.knight++
+                break;
+            case'末日使者':
+                recorder.demon++
+                recorder.warrior++
+                break;
+            case'树精卫士':
+                recorder.elf++
+                recorder.druid++
+                break;
+            case'死亡先知':
+                recorder.ghost++
+                recorder.warlock++
+                break;
+            case'死亡骑士':
+                recorder.demon++
+                recorder.knight++
+                break;
+            case'死灵法师':
+                recorder.ghost++
+                recorder.warlock++
+                break;
+            case'水晶室女':
+                recorder.human++
+                recorder.mage++
+                break;
+            case'沙王':
+                recorder.beast++
+                recorder.assassin++
+                break;
+            case'海军上将':
+                recorder.human++
+                recorder.warrior++
+                break;
+            case'混沌骑士':
+                recorder.demon++
+                recorder.knight++
+                break;
+            case'潮汐猎人':
+                recorder.naga++
+                recorder.hunter++
+                break;
+            case'灵魂守卫':
+                recorder.demon++
+                recorder.demonHunter++
+                break;
+            case'炼金术士':
+                recorder.goblin++
+                recorder.warlock++
+                break;
+            case'狙击手':
+                recorder.dwart++
+                recorder.hunter++
+                break;
+            case'狼人':
+                recorder.human++
+                recorder.beast++
+                recorder.warrior++
+                break;
+            case'痛苦女王':
+                recorder.demon++
+                recorder.assassin++
+                break;
+            case'矮人直升机':
+                recorder.dwart++
+                recorder.craftsman++
+                break;
+            case'秀逗魔导士':
+                recorder.human++
+                recorder.mage++
+                break;
+            case'精灵龙':
+                recorder.elf++
+                recorder.dragon++
+                recorder.mage++
+                break;
+            case'蛇发女妖':
+                recorder.naga++
+                recorder.hunter++
+                break;
+            case'蝙蝠骑士':
+                recorder.troll++
+                recorder.knight++
+                break;
+            case'谜团':
+                recorder.elemental++
+                recorder.warlock++
+                break;
+            case'赏金猎人 ':
+                recorder.goblin++
+                recorder.assassin++;
+                break;
+            case'闪电幽魂':
+                recorder.elemental++
+                recorder.mage++
+                break;
+            case'隐形刺客':
+                recorder.satyr++
+                recorder.assassin++
+                break;
+            case'风行者':
+                recorder.elf++
+                recorder.hunter++
+                break;
+            case'食人魔法师':
+                recorder.orge++
+                recorder.mage++
+                break;
+            case'魅惑魔女':
+                recorder.beast++
+                recorder.druid++
+                break;
+            case'鱼人夜行者':
+                recorder.naga++
+                recorder.assassin++
+                break;
+            case'鱼人守卫':
+                recorder.naga++
+                recorder.warrior++
+                break;
+            case'龙骑士':
+                recorder.human++
+                recorder.dragon++
+                recorder.knight++
+                break;
+        }
 
+    }
+    function getTxt() {
+        let txt = "";
+        for(let record in recorder) {
+            if(recorder[record]>0) {
+                txt+=recorder[record];
+                txt += record;
+                txt +="\n";
+            }
+        }
+        txt=txt.replace("human","人类");
+        txt=txt.replace("elf",'精灵');
+        txt=txt.replace("orge","食人魔");
+        txt=txt.replace("satyr","萨特");
+        txt=txt.replace("dwart","矮人");
+        txt=txt.replace("beast","野兽");
+        txt=txt.replace("goblin","哥布林");
+        txt=txt.replace("demon","恶魔");
+        txt=txt.replace("elemental","元素");
+        txt=txt.replace("naga","娜迦");
+        txt=txt.replace("orc","兽人");
+        txt=txt.replace("troll","巨魔");
+        txt=txt.replace("ghost","亡灵");
+        txt=txt.replace("dragon","龙");
+        txt=txt.replace("warrior","战士");
+        txt=txt.replace("assassin","刺客");
+        txt=txt.replace("mage","法师");
+        txt=txt.replace("hunter","猎人");
+        txt=txt.replace("warlock","术士");
+        txt=txt.replace("knight","骑士");
+        txt=txt.replace("craftsman","工匠");
+        txt=txt.replace("druid","德鲁伊");
+        txt=txt.replace("demonHunter","恶魔猎手");
+        txt=txt.replace("shaman","萨满");
+        return txt;
+    }
     for(chess of chessList) {
         // let chess = chessList[1];
         // let img = new Image();
@@ -80,6 +381,7 @@ function drawChess() {
                 ctx1.stroke();
                 ctx1.closePath();
             }
+    }
         // }
         // else {
         //     img.onload =  function ()  {  //首次加载完成
@@ -95,13 +397,24 @@ function drawChess() {
         //         }
         //     }
         // }
-
+    let chessName = [];
+    for(chess of chessList) {
+        chessName.push(chess.name);
     }
+    let chessSet = new Set(chessName);
+    for(name of chessSet) {
+        check(name);
+    }
+
+    let info = document.getElementById("info")
+    info.innerText = getTxt();
+    // info.appendChild(txt);
 }
+
 
 var cnt = 0;
 function addChess(chessName) {
-    if(chessList.length===10) alert("棋子不能超过10个")
+    if(chessList.length===20) alert("棋子不能超过20个")
     else {
         let src = "champions/"+chessName+".png";
         let chs =  new Chess(chessName,src,cnt % 8 * layout.cell,layout.cell * 7 - Math.floor(cnt / 8 )* layout.cell);
@@ -110,8 +423,6 @@ function addChess(chessName) {
         drawChess();
     }
 }
-
-
 
 var previousX,previousY;
 function chessClick(e) {
@@ -169,9 +480,10 @@ function stopDragging() {
         for(chess of chessList) {
             console.log(chess.x,chess.y);
             if((chess.x===fixedX) && (chess.y===fixedY)) {
-                previousSelected.x = previousX;
-                previousSelected.y = previousY;
-
+                chess.x = previousX;
+                chess.y = previousY;
+                previousSelected.x = fixedX;
+                previousSelected.y = fixedY;
             } else {
                 previousSelected.x = fixedX;
                 previousSelected.y = fixedY;
